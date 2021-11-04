@@ -63,13 +63,12 @@ const burger = {
   category: "Lunch",
   discount: function (string) {
     if (string === 'student' || string === 'teacher') {
-      return 13.5
+      return this.price - (this.price * 0.25);
     } else if (string === 'public') {
-      return 16.2
+      return this.price - (this.price * 0.1);
     } else {
-      return 'no discount'
+      return 'no discount';
     }
-
   }
 }
 console.log('task 2',burger.discount('teacher'));
@@ -91,7 +90,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log('task 3',reviews[5].feedback);
 
 
 
@@ -100,10 +99,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
 
-
-
-
+console.log(reviews[7].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
